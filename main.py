@@ -5,7 +5,7 @@ from langchain import LLMChain, OpenAI
 from langchain.prompts import PromptTemplate
 
 # Set the REPLICATE_API_TOKEN environment variable
-os.environ["REPLICATE_API_TOKEN"] = "r8_6hI0lOyaOFtU8rfQaoSIsUcfaPnzcYV2D81gw"
+REPLICATE_API_TOKEN= "r8_6hI0lOyaOFtU8rfQaoSIsUcfaPnzcYV2D81gw"
 
 def generate_image(prompt, width, height, num_inference_steps):
     input = {
