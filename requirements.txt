@@ -4,3 +4,5 @@ langchain_core==0.2.21
 langchain_google_genai==1.0.7
 replicate==0.28.0
 streamlit==1.32.0
+langchain-community
+langchain-core
