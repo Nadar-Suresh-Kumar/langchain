@@ -3,9 +3,19 @@ import replicate
 import streamlit as st
 from langchain import LLMChain, OpenAI
 from langchain.prompts import PromptTemplate
+from dotenv import load_dotenv
 
-# Set the REPLICATE_API_TOKEN environment variable
-os.environ["REPLICATE_API_TOKEN"] = "r8_LsSO1DKBgzgdaEMAG6PfHcPqH03eJxf0JMUle"
+# Load environment variables from .env file
+load_dotenv()
+
+# Retrieve the REPLICATE_API_TOKEN from environment variables
+REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
+
+# Ensure the token is set
+if REPLICATE_API_TOKEN is None:
+    raise ValueError("REPLICATE_API_TOKEN is not set. Please set it in the .env file.")
+
+os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
 
 def generate_image(prompt, width, height, num_inference_steps):
     input = {
